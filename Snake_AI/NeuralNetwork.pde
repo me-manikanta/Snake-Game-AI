@@ -26,7 +26,7 @@ class NeuralNetwork{
     weightsOH.mutate(mutationRate);
   }
   
-  float[] ouput(float[] inputArray){
+  float[] output(float[] inputArray){
   
     //Convert the recieved input into matrix
     Matrix result = weightsHH.singleColumnMatrixFromArray(inputArray);
@@ -59,9 +59,9 @@ class NeuralNetwork{
   
   NeuralNetwork crossOver(NeuralNetwork partner){
     NeuralNetwork child = new NeuralNetwork(inputNodes,hiddenNodes,outputNodes);
-    child,weightsHI = weightsHI.crossOver(partner.weightsHI);
-    child,weightsHH = weightsHH.crossOver(partner.weightsHH);
-    child,weightsOH = weightsOH.crossOver(partner.weightsOH);
+    child.weightsHI = weightsHI.crossOver(partner.weightsHI);
+    child.weightsHH = weightsHH.crossOver(partner.weightsHH);
+    child.weightsOH = weightsOH.crossOver(partner.weightsOH);
     return child;
   }
   

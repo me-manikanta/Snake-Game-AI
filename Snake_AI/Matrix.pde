@@ -7,6 +7,7 @@ class Matrix {
   Matrix(int rows, int columns) {
     this.rows=rows;
     this.columns=columns;
+    matrix= new float[rows][columns];
   }
 
   Matrix(float[][] m) {
@@ -84,10 +85,10 @@ class Matrix {
 
     if (columns == n.rows) {
       for (int i=0; i<rows; i++) {
-        for (int j=0; j<n.columns; j++)) {
+        for (int j=0; j<n.columns; j++){
           float temp=0;
           for (int k=0; k<columns; k++) {
-            temp+= matrix[i][k]8n.matrix[k][j];
+            temp+= matrix[i][k]*n.matrix[k][j];
           }
           result.matrix[i][j]=temp;
         }
@@ -171,7 +172,7 @@ class Matrix {
   void mutate(float mutationRate){
     for(int i=0;i<rows;i++){
       for(int j=0;j<columns;j++){
-        float rand=random();
+        float rand=random(1 );
         if(rand<mutationRate){
           matrix[i][j]+=randomGaussian()/5;
           if(matrix[i][j]>1) matrix[i][j]=1;

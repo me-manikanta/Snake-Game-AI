@@ -135,8 +135,10 @@ class Snake {
 
     //Show the Snake
     //Head
+    fill(0,255,0);
     rect(pos.x, pos.y, 10, 10);
     //Tail
+    fill(255);
     for (int i = 0; i< tailPositions.size(); i++) {
       rect(tailPositions.get(i).x, tailPositions.get(i).y, 10, 10);
     }
